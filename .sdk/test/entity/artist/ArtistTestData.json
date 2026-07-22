@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "artist": {
+      "ARTIST00": {
+        "id": "ARTIST00",
+        "name": "s1f",
+        "url": "s20"
+      },
+      "ARTIST01": {
+        "id": "ARTIST01",
+        "name": "s3d",
+        "url": "s3e"
+      },
+      "ARTIST02": {
+        "id": "ARTIST02",
+        "name": "s5b",
+        "url": "s5c"
+      }
+    }
+  },
+  "new": {
+    "artist": {
+      "artist_ref01": {
+        "name": "s79",
+        "url": "s7a"
+      }
+    }
+  }
+}

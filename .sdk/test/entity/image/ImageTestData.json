@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "image": {
+      "IMAGE00": {
+        "artist": {},
+        "category": "s47",
+        "height": "s48",
+        "id": "IMAGE00",
+        "thumbnail": "s4a",
+        "url": "s4b",
+        "width": "s4c"
+      },
+      "IMAGE01": {
+        "artist": {},
+        "category": "s8d",
+        "height": "s8e",
+        "id": "IMAGE01",
+        "thumbnail": "s90",
+        "url": "s91",
+        "width": "s92"
+      },
+      "IMAGE02": {
+        "artist": {},
+        "category": "sd3",
+        "height": "sd4",
+        "id": "IMAGE02",
+        "thumbnail": "sd6",
+        "url": "sd7",
+        "width": "sd8"
+      }
+    }
+  },
+  "new": {
+    "image": {
+      "image_ref01": {
+        "artist": {},
+        "category": "s119",
+        "height": "s11a",
+        "thumbnail": "s11c",
+        "url": "s11d",
+        "width": "s11e"
+      }
+    }
+  }
+}

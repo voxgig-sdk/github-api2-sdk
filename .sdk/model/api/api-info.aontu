@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/waifuim"
+      }
+      description: "The API for your Waifu content. Access thousands of categorized anime illustrations via our robust REST API or browse freely."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.waifu.im"
+        }
+      ]
+      summary: "The API for your Waifu content."
+      title: "Waifu API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/waifuim"
+    }
+  }
+}
+
