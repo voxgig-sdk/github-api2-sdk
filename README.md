@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = GithubApi2SDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = GithubApi2SDK.test({
+  entity: {
+    artist: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const artists = await client.Artist().list()
-// artists is an array of bare Artist records populated with mock data
+// artists is an array of Artist entities, populated with mock data
+// — call artists[0].data() for the record itself
 console.log(artists)
 ```
 
@@ -110,7 +119,7 @@ import { GithubApi2SDK } from '@voxgig-sdk/github-api2'
 
 const client = new GithubApi2SDK()
 
-// List all artists (returns Artist[])
+// List all artists (returns ArtistEntity[] — .data() for the record)
 const artists = await client.Artist().list()
 for (const artist of artists) {
   console.log(artist)
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/waifuim](https://github.com/l0v3m0n3y/waifuim)
 

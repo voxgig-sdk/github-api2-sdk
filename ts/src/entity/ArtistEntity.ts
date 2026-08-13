@@ -37,7 +37,7 @@ class ArtistEntity extends GithubApi2EntityBase<Artist> {
 
 
 
-  async list(this: any, reqmatch?: ArtistListMatch, ctrl?: Control): Promise<Artist[]> {
+  async list(this: any, reqmatch?: ArtistListMatch, ctrl?: Control): Promise<ArtistEntity[]> {
 
     const utility = this._utility
 

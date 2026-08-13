@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# GithubApi2 SDK exists test
 
 import pytest
 from githubapi2_sdk import GithubApi2SDK

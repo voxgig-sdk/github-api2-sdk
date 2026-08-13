@@ -77,6 +77,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/artists",
                 ["parts"] = {
@@ -90,7 +91,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.artists`",
                 },
                 ["index$"] = 0,
               },
@@ -192,6 +193,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/images",
                 ["parts"] = {
@@ -206,7 +208,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.images`",
                 },
                 ["index$"] = 0,
               },

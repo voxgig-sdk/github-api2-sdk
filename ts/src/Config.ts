@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'GithubApi2',
   }
 
 
@@ -109,6 +109,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/artists",
               "parts": [
@@ -122,7 +123,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.artists`"
               },
               "index$": 0
             }
@@ -224,6 +225,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/images",
               "parts": [
@@ -238,7 +240,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.images`"
               },
               "index$": 0
             }

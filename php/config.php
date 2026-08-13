@@ -83,6 +83,7 @@ class GithubApi2Config
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/artists',
                   'parts' => [
@@ -96,7 +97,7 @@ class GithubApi2Config
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.artists`',
                   ],
                   'index$' => 0,
                 ],
@@ -198,6 +199,7 @@ class GithubApi2Config
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/images',
                   'parts' => [
@@ -212,7 +214,7 @@ class GithubApi2Config
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.images`',
                   ],
                   'index$' => 0,
                 ],

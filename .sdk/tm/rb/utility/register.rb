@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ GithubApi2Utility.registrar = ->(u) {
   u.prepare_params = GithubApi2Utilities::PrepareParams
   u.prepare_path = GithubApi2Utilities::PreparePath
   u.prepare_query = GithubApi2Utilities::PrepareQuery
+  u.graphql_body = GithubApi2Utilities::GraphqlBody
+  u.graphql_errors = GithubApi2Utilities::GraphqlErrors
   u.result_basic = GithubApi2Utilities::ResultBasic
   u.result_body = GithubApi2Utilities::ResultBody
   u.result_headers = GithubApi2Utilities::ResultHeaders

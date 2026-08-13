@@ -35,7 +35,9 @@ const client = new GithubApi2SDK()
 
 ### 2. List artist records
 
-`list()` resolves to an array of Artist objects — iterate it directly:
+`list()` resolves to an array of Artist ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const artists = await client.Artist().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = GithubApi2SDK.test()
 
 const artist = await client.Artist().list()
-// artist is a bare entity populated with mock response data
+// artist is the entity, populated with mock response data
+// — call artist.data() for the record itself
 console.log(artist)
 ```
 

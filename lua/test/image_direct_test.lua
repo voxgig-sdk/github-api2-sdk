@@ -61,11 +61,11 @@ function image_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["GITHUBAPI__TEST_IMAGE_ENTID"] = {},
-    ["GITHUBAPI__TEST_LIVE"] = "FALSE",
+    ["GITHUB_API2_TEST_IMAGE_ENTID"] = {},
+    ["GITHUB_API2_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["GITHUBAPI__TEST_LIVE"] == "TRUE"
+  local live = env["GITHUB_API2_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

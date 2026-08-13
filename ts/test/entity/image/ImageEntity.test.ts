@@ -26,8 +26,8 @@ import {
 describe('ImageEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when GITHUBAPI2_TEST_LIVE=TRUE.
-  afterEach(liveDelay('GITHUBAPI2_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when GITHUB_API2_TEST_LIVE=TRUE.
+  afterEach(liveDelay('GITHUB_API2_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = GithubApi2SDK.test()
@@ -38,7 +38,7 @@ describe('ImageEntity', async () => {
 
   test('basic', async (t) => {
 
-    const live = 'TRUE' === process.env.GITHUB_API__TEST_LIVE
+    const live = 'TRUE' === process.env.GITHUB_API2_TEST_LIVE
     for (const op of ['list']) {
       if (maybeSkipControl(t, 'entityOp', 'image.' + op, live)) return
     }
@@ -48,7 +48,7 @@ describe('ImageEntity', async () => {
     // fixture (entity TestData.json). Those don't exist on the live API.
     // Skip live runs unless the user provided a real ENTID env override.
     if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set GITHUB_API__TEST_IMAGE_ENTID JSON to run live')
+      t.skip('live entity test uses synthetic IDs from fixture — set GITHUB_API2_TEST_IMAGE_ENTID JSON to run live')
       return
     }
     const client = setup.client
@@ -63,7 +63,7 @@ describe('ImageEntity', async () => {
     const image_ref01_ent = client.Image()
     const image_ref01_match: any = {}
 
-    const image_ref01_list = await image_ref01_ent.list(image_ref01_match)
+    const image_ref01_list = (await image_ref01_ent.list(image_ref01_match)).map((e: any) => e.data())
 
 
   })
@@ -106,18 +106,18 @@ function basicSetup(extra?: any) {
   // basic flow consumes synthetic IDs from the fixture file; without an
   // override those synthetic IDs reach the live API and 4xx. Surface this
   // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['GITHUB_API__TEST_IMAGE_ENTID']
+  const idmapEnvVal = process.env['GITHUB_API2_TEST_IMAGE_ENTID']
   const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
 
   const env = envOverride({
-    'GITHUB_API__TEST_IMAGE_ENTID': idmap,
-    'GITHUB_API__TEST_LIVE': 'FALSE',
-    'GITHUB_API__TEST_EXPLAIN': 'FALSE',
+    'GITHUB_API2_TEST_IMAGE_ENTID': idmap,
+    'GITHUB_API2_TEST_LIVE': 'FALSE',
+    'GITHUB_API2_TEST_EXPLAIN': 'FALSE',
   })
 
-  idmap = env['GITHUB_API__TEST_IMAGE_ENTID']
+  idmap = env['GITHUB_API2_TEST_IMAGE_ENTID']
 
-  const live = 'TRUE' === env.GITHUB_API__TEST_LIVE
+  const live = 'TRUE' === env.GITHUB_API2_TEST_LIVE
 
   if (live) {
     client = new GithubApi2SDK(merge([
@@ -134,7 +134,7 @@ function basicSetup(extra?: any) {
     client,
     struct,
     data: entityData,
-    explain: 'TRUE' === env.GITHUB_API__TEST_EXPLAIN,
+    explain: 'TRUE' === env.GITHUB_API2_TEST_EXPLAIN,
     live,
     syntheticOnly: live && !idmapOverridden,
     now: Date.now(),

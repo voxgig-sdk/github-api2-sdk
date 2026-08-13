@@ -23,8 +23,8 @@ module GithubApi2TestRunner
   end
 
   def self.env_override(m)
-    live = getenv("GITHUBAPI2_TEST_LIVE")
-    override = getenv("GITHUBAPI2_TEST_OVERRIDE")
+    live = getenv("GITHUB_API2_TEST_LIVE")
+    override = getenv("GITHUB_API2_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module GithubApi2TestRunner
       end
     end
 
-    explain = getenv("GITHUBAPI2_TEST_EXPLAIN")
-    m["GITHUBAPI2_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("GITHUB_API2_TEST_EXPLAIN")
+    m["GITHUB_API2_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

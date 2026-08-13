@@ -60,11 +60,11 @@ def artist_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "GITHUBAPI__TEST_ARTIST_ENTID" => {},
-    "GITHUBAPI__TEST_LIVE" => "FALSE",
+    "GITHUB_API2_TEST_ARTIST_ENTID" => {},
+    "GITHUB_API2_TEST_LIVE" => "FALSE",
   })
 
-  live = env["GITHUBAPI__TEST_LIVE"] == "TRUE"
+  live = env["GITHUB_API2_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

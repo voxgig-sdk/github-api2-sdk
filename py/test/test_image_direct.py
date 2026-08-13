@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from githubapi2_sdk.utility.voxgig_struct import voxgig_struct as vs
 from githubapi2_sdk import GithubApi2SDK
-from core import helpers
+from githubapi2_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _image_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "GITHUBAPI__TEST_IMAGE_ENTID": {},
-        "GITHUBAPI__TEST_LIVE": "FALSE",
+        "GITHUB_API2_TEST_IMAGE_ENTID": {},
+        "GITHUB_API2_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("GITHUBAPI__TEST_LIVE") == "TRUE"
+    live = env.get("GITHUB_API2_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

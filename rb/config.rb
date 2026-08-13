@@ -78,6 +78,7 @@ module GithubApi2Config
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/artists",
                   "parts" => [
@@ -91,7 +92,7 @@ module GithubApi2Config
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.artists`",
                   },
                   "index$" => 0,
                 },
@@ -193,6 +194,7 @@ module GithubApi2Config
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/images",
                   "parts" => [
@@ -207,7 +209,7 @@ module GithubApi2Config
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.images`",
                   },
                   "index$" => 0,
                 },

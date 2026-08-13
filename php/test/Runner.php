@@ -43,8 +43,8 @@ class GithubApi2TestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('GITHUBAPI2_TEST_LIVE');
-        $override = self::getenv('GITHUBAPI2_TEST_OVERRIDE');
+        $live = self::getenv('GITHUB_API2_TEST_LIVE');
+        $override = self::getenv('GITHUB_API2_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class GithubApi2TestRunner
             }
         }
 
-        $explain = self::getenv('GITHUBAPI2_TEST_EXPLAIN');
+        $explain = self::getenv('GITHUB_API2_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['GITHUBAPI2_TEST_EXPLAIN'] = $explain;
+            $m['GITHUB_API2_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

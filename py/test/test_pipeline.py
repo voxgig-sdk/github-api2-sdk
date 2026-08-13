@@ -16,11 +16,11 @@
 import pytest
 
 from githubapi2_sdk import GithubApi2SDK
-from core.error import GithubApi2Error
-from core.result import GithubApi2Result
-from core.response import GithubApi2Response
-from core.spec import GithubApi2Spec
-from feature.base_feature import GithubApi2BaseFeature
+from githubapi2_sdk.core.error import GithubApi2Error
+from githubapi2_sdk.core.result import GithubApi2Result
+from githubapi2_sdk.core.response import GithubApi2Response
+from githubapi2_sdk.core.spec import GithubApi2Spec
+from githubapi2_sdk.feature.base_feature import GithubApi2BaseFeature
 
 
 def _client():

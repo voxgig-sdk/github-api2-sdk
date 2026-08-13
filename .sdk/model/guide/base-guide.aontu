@@ -8,12 +8,14 @@ guide: {
   entity: artist: {
     path: "/artists": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.artists`")|top
     }
   }
 
   entity: image: {
     path: "/images": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.images`")|top
     }
   }
 
